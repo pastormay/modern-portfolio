@@ -5,7 +5,7 @@ const menuNav = document.querySelector(".menu-nav");
 const menuBranding = document.querySelector(".menu-branding");
 const navItems = document.querySelectorAll(".nav-item");
 
-// Set Initial State of Menue
+// Set Initial State of Menu
 let showMenu = false;
 
 menuBtn.addEventListener("click", toggleMenu);
@@ -31,3 +31,17 @@ function toggleMenu() {
     showMenu = false;
   }
 }
+
+$(document).on("click", ".open-modal", function() {
+  var myTargetModal = "#" + $(this).data("bid");
+  $("#myModal").hide();
+  $(".modal-content").hide();
+
+  $("#myModal").fadeIn();
+  $(myTargetModal).fadeIn();
+});
+
+$("body").on("click", ".close-modal", function() {
+  $("#myModal").hide();
+  $(".modal-content").hide();
+});
